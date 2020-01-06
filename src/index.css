@@ -1,4 +1,4 @@
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -225,3 +225,4 @@ figure {
   color: white;
   background-color: lightseagreen;
 }
+ */
