@@ -2,9 +2,8 @@
 import React, {Component} from 'react';
 import FilmDetails from './FilmDetails';
 import FilmListing from './FilmListing';
-import FilmLRow from './FilmRow';
-import TMDB from './TMDB'
 import FilmRow from './FilmRow';
+import TMDB from './TMDB'
 
 
 class App extends Component{
