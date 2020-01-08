@@ -21,6 +21,11 @@ Create a new component called `Fave` that will eventually handle whether a movie
 </div>
 ```
 
+##### Don't forget to add the line below to `index.html` you will find it under Public 
+```html
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+```
+
 In the `FilmRow` component, underneath the `film-summary` `div`, render the `Fave` component.
 
 In your browser, the icon should appear at the bottom right corner of each film row.
