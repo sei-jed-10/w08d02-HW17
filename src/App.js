@@ -6,16 +6,20 @@ import FilmDetails from './FilmDetails';
 import films from './TMDB';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    
+  }
+
   // what should the component render?
   render () {
     // make sure to return some UI
-    let allFilms = this.props.films.map( (film, index) => (film={film}))
     return (
      // console.log(film={films}))
       <div className="film-library">
       <div className="film-list">
         <h1 className="section-title">FILMS</h1>
-        <FilmListing {allFilms}/>
+        <h1>{this.props.allFilms}</h1>
       </div>
 
       <div className="film-details">
