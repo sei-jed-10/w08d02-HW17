@@ -8,36 +8,24 @@ import TMDB from './TMDB'
 
 class App extends Component{
 
-
   render(){
 
-    let allFilms = TMDB.films.map( (film) => (
-      <FilmListing movies={film.title}/>
-    ));
-    let details = TMDB.films.map( (film) => (
-      <FilmRow id={film.id} poster={film.poster_path} title={film.title} date={film.release_date}/>
-      
-    ));
     let back = TMDB.films.map( (film) => (
-      <FilmDetails b={film.backdrop_path}/>
-      
-    ));
+      <FilmDetails b={film.backdrop_path}/>));
 
     return(
+      
       <div className="film-library">
+        
         <div className="film-list">
           <h1 className="section-title">FILMS</h1>
-          {/* {allFilms} */}
-          {details}
-          
+           <FilmListing />      
         </div>
-
-        <div className="film-details">
-          <h1 className="section-title">DETAILS</h1>
-          {/* {details} */}
-          {back}
-
+         <div className="film-details">
+           <h1 className="section-title">DETAILS</h1>
+           {back}
         </div>
+    
       </div>
     )
   }

@@ -7,27 +7,27 @@ class fave extends Component {
 constructor(props){
     super(props)
     this.state={
-        faveList: [],
-        msg: ''      
+        isFave: false,
+        faveList: []      
     }
-    // this.handleClick = this.handleClick.bind(this)
+     this.handleClick = this.handleClick.bind(this)
 }
-
-
   render() {
-     //console.log(this.state.msg);
-    console.log('test');
+    const isFave = (this.state.isFave) ? 'remove_from_queue' : 'add_to_queue'
+  
     return (
-      <div className="film-row-fave add_to_queue" onClick={this.handleClick}>
-        <p className="material-icons" >add_to_queue</p>
-      </div>
+    
+      <div className={`film-row-fave ${this.state.isFave ? 'add_to_queue' : 'remove_from_queue'}`} >
+      <p className={`material-icons ${this.state.isFave ? 'add_to_queue' : 'remove_from_queue'}`}  onClick={this.handleClick}>{isFave}</p>
+    </div>
     )
   }
 
   handleClick(e) {
     e.preventDefault();
-    // this.setState ({msg: 'handling Fave click!'})
-    this.setState ({msg:'handling Fave click!' })
+    e.stopPropagation()
+    console.log ('handling Fave click!')
+    this.setState ({isFave: !this.state.isFave})
    
 }
   
