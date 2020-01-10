@@ -1,16 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class FilmBackdrop extends Component{
+export default function FilmBackdrop(props) {
 
-    render(){
-        console.log("now in backdrop")
-        let posterURl="https://image.tmdb.org/t/p/w1280/"+this.props.poster;
+    let posterURl = "https://image.tmdb.org/t/p/w1280/" + props.poster;
 
-        return(         
-            <img src={posterURl} alt="" />
-        )
-    }
-
+    return (
+        <img src={posterURl} alt= "" />
+    )
 }
 
-export default FilmBackdrop;

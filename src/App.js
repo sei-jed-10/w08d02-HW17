@@ -14,6 +14,8 @@ class App extends Component {
       current: TMDB.films[3]
     }
     this.handleFaveToggle = this.handleFaveToggle.bind(this)
+    this.handleDetailsClick = this.handleDetailsClick.bind(this)
+
 
   }
 
@@ -36,7 +38,7 @@ class App extends Component {
   }
 
   handleDetailsClick(film) {
-    console.log("Fetching details for "+film.filmTitle)
+    console.log("Fetching details for "+film.title)
     this.setState({current: film})
 }
 
@@ -63,7 +65,7 @@ class App extends Component {
           <h1 className="section-title">DETAILS</h1>
           <FilmDetails films={this.state.films}
            current={this.state.current}
-           onDetailsToggle={(e)=>this.handleDetailsClick(e)} />
+            />
         </div>
       </div>
     )
