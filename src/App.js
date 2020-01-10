@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FilmListing from './FilmListing';
-import FilmDetails from './FilmRow';
+import FilmDetails from './FilmDetails';
 import TMDB from './TMDB';
 
 
@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       films: TMDB.films,
       faves: [],
-      current: {}
+      current: TMDB.films[3]
     }
     this.handleFaveToggle = this.handleFaveToggle.bind(this)
 
@@ -49,19 +49,21 @@ class App extends Component {
           <FilmListing films={this.state.films}
            faves={this.state.faves}
             onFaveToggle={(e)=>this.handleFaveToggle(e)}
+              onDetailsToggle={(e)=>this.handleDetailsClick(e)}
             
              />
 
 
-          <FilmDetails films={this.state.films}
-           current={this.state.current}
-           onDetailsToggle={(e)=>this.handleDetailsClick(e)} />
+
 
 
         </div>
 
         <div className="film-details">
           <h1 className="section-title">DETAILS</h1>
+          <FilmDetails films={this.state.films}
+           current={this.state.current}
+           onDetailsToggle={(e)=>this.handleDetailsClick(e)} />
         </div>
       </div>
     )

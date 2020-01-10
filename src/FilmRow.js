@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FilmPoster from './FilmPoster';
 import Fave from './Fave';
+import FilmDetails from './FilmDetails';
 
 class FilmRow extends Component {
 
@@ -20,7 +21,8 @@ class FilmRow extends Component {
                     <p>{this.props.year}</p>
                 </div>
                 <Fave onFaveToggle={() => this.props.onFaveToggle(this.props)}
-                isFave={this.props.isFave}></Fave>
+                isFave={this.props.isFave}
+                    onDetailsToggle={()=>this.props.onDetailsToggle(this.props)}/>
             </div>
         )
     }
