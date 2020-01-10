@@ -8,26 +8,40 @@ class FilmListing extends Component {
         this.state={
             filter: 'all',
            // isFave: false I added this idk why
+           chosenList:this.props.films
         }
     }
 
     handleFilterClick(filter) {
-        console.log("Setting filter to " + this.state.filter)
+        console.log("Setting filter to " + filter)
+
+        var display=''
+        if (filter=='fave'){
+            display=this.props.faves
+        }
+        else{
+            display=this.props.films
+        }
+
         this.setState({
-            filter: filter
+            filter: filter,
+            chosenList: display
         })
+
     }
 
     render() {
         console.log(this.props.films)
-        let allFilms = (this.props.films).map((film, index) => (
+        let allFilms = (this.state.chosenList).map((film, index) => (
 
-            <FilmRow key={index}filmTitle={film.title}
+            <FilmRow key={index} 
+                filmTitle={film.title}
                 year={(new Date(film.release_date)).getFullYear()}
                 poster={film.poster_path}
                 key={film.id}
                 onFaveToggle={() => this.props.onFaveToggle(film)}
-                isFave={(this.props.faves).includes(film)}></FilmRow>
+                isFave={(this.props.faves).includes(film)}
+               ></FilmRow>
 
         ));
 
@@ -42,7 +56,7 @@ class FilmListing extends Component {
                     </div>
                     <div className={`film-list-filter ${this.state.filter === 'fave' ? 'is-active' : ''}`} onClick={() => this.handleFilterClick('fave')}>
                         FAVES
-            <span className="section-count">0</span>
+            <span className="section-count">{(this.props.faves).length}</span>
                     </div>
                 </div>
 

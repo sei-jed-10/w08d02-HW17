@@ -4,19 +4,18 @@ import Fave from './Fave';
 
 class FilmRow extends Component {
 
-    handleDetailsClick(film) {
-        console.log("Fetching details for "+film.filmTitle)
-    }
+    // handleDetailsClick(film) {
+    //     console.log("Fetching details for "+film.filmTitle)
+    // }
 
     render() {
-
-        // console.log(this.props.filmTitle)
-        // console.log(this.props.year)
 
         return (
             <div className="film-row">
                 <FilmPoster poster={this.props.poster} />
-                <div onClick={()=>this.handleDetailsClick(this.props)} className="film-summary">
+                <div className="film-summary">
+                {/* <div onClick={()=>this.handleDetailsClick(this.props)} className="film-summary"> //old line */}
+
                     <h1>{this.props.filmTitle}</h1>
                     <p>{this.props.year}</p>
                 </div>

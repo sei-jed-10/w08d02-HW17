@@ -21,7 +21,7 @@ class App extends Component {
     const faves=(this.state.faves).slice()
     const filmIndex=faves.indexOf(film)
 
-    if (filmIndex==-1){
+    if (filmIndex===-1){
       console.log("Adding "+film.title+" to faves")
       faves.push(film)
     }
@@ -35,14 +35,27 @@ class App extends Component {
 
   }
 
+  handleDetailsClick(film) {
+    console.log("Fetching details for "+film.filmTitle)
+    this.setState({current: film})
+}
+
   render() {
 
     return (
       <div className="film-library">
         <div className="film-list">
           <h1 className="section-title">FILMS</h1>
-          <FilmListing films={this.state.films} faves={this.state.faves} onFaveToggle={(e)=>this.handleFaveToggle(e)} />
-          <FilmDetails films={this.state.films} current={this.state.current} />
+          <FilmListing films={this.state.films}
+           faves={this.state.faves}
+            onFaveToggle={(e)=>this.handleFaveToggle(e)}
+            
+             />
+
+
+          <FilmDetails films={this.state.films}
+           current={this.state.current}
+           onDetailsToggle={(e)=>this.handleDetailsClick(e)} />
 
 
         </div>

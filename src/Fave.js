@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 
 class Fave extends Component {
-    constructor(props){
-        super(props)
-         this.state={
-            isFave: props.isFave
-         }
-    }
 
 
     handleClick(e){
         e.stopPropagation() //Added it just in case.
         console.log("handling Fave click!")
         this.props.onFaveToggle()
-
-
 
         }
 
