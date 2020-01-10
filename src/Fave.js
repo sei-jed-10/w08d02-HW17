@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class Fave extends Component {
     constructor(props){
         super(props)
-        // this.state={
-        //     isFave: false
-        // }
+         this.state={
+            isFave: props.isFave
+         }
     }
 
 

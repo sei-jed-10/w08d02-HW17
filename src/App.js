@@ -21,7 +21,7 @@ class App extends Component {
     const faves=(this.state.faves).slice()
     const filmIndex=faves.indexOf(film)
 
-    if (filmIndex!=-1){
+    if (filmIndex==-1){
       console.log("Adding "+film.title+" to faves")
       faves.push(film)
     }
@@ -41,7 +41,7 @@ class App extends Component {
       <div className="film-library">
         <div className="film-list">
           <h1 className="section-title">FILMS</h1>
-          <FilmListing films={this.state.films} faves={this.state.faves} onFaveToggle={this.handleFaveToggle(film)} />
+          <FilmListing films={this.state.films} faves={this.state.faves} onFaveToggle={(e)=>this.handleFaveToggle(e)} />
           <FilmDetails films={this.state.films} current={this.state.current} />
 
 

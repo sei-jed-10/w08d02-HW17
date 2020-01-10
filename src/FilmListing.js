@@ -6,7 +6,8 @@ class FilmListing extends Component {
     constructor(props){
         super(props)
         this.state={
-            filter: 'all'
+            filter: 'all',
+           // isFave: false I added this idk why
         }
     }
 
@@ -24,13 +25,16 @@ class FilmListing extends Component {
             <FilmRow key={index}filmTitle={film.title}
                 year={(new Date(film.release_date)).getFullYear()}
                 poster={film.poster_path}
-                key={film.id}></FilmRow>
+                key={film.id}
+                onFaveToggle={() => this.props.onFaveToggle(film)}
+                isFave={(this.props.faves).includes(film)}></FilmRow>
 
         ));
 
         return (
-            <div className="film-list">
-                <h1 className="section-title">FILMS</h1>
+            // edited the following two lines
+            <div className="film-lists">
+                <h1 className="section-title"></h1> 
                 <div className="film-list-filters">
                     <div className={`film-list-filter ${this.state.filter === 'all' ? 'is-active' : ''}`} onClick={() => this.handleFilterClick('all')}>
                         ALL

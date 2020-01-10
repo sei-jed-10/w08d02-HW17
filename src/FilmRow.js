@@ -10,8 +10,8 @@ class FilmRow extends Component {
 
     render() {
 
-        console.log(this.props.filmTitle)
-        console.log(this.props.year)
+        // console.log(this.props.filmTitle)
+        // console.log(this.props.year)
 
         return (
             <div className="film-row">
@@ -20,7 +20,8 @@ class FilmRow extends Component {
                     <h1>{this.props.filmTitle}</h1>
                     <p>{this.props.year}</p>
                 </div>
-                <Fave></Fave>
+                <Fave onFaveToggle={() => this.props.onFaveToggle(this.props)}
+                isFave={this.props.isFave}></Fave>
             </div>
         )
     }
