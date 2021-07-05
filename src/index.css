@@ -59,8 +59,9 @@ figure {
   grid-template-columns: 1fr 3fr;
 
   margin-bottom: 0.2rem;
-  font-size: 0.5em;
-  background-color: white;
+  font-size: 0.1em;
+  text-align: center;
+ background-color: white;
 }
 
 .film-row:hover {
