@@ -82,6 +82,15 @@ figure {
   background-color: rgba(32, 178, 170, 0.75);
 }
 
+.film-row-fave.add_to_queue {
+  background-color: rgba(250, 252, 252, 0.75);
+}
+
+.material-icons.add_to_queue {
+  background-color: rgba(250, 252, 252, 0.75);
+}
+
+
 .film-poster {
   margin: 0;
 }
